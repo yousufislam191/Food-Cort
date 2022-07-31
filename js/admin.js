@@ -36,3 +36,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     // Your code to run since DOM is loaded and ready
 });
+
+/**
+   * checkbox
+*/
+$('#check').change(offerCheckking);
+function offerCheckking() {
+    if ($('#check').is(":checked")) {
+        $("#offer").show();
+    } else {
+        $("#offer").hide();
+    }
+}
+
+/**
+   * displayimage slider from selected file
+*/
+function getImage() {
+    let uploadButton = document.getElementById('formFile');
+    let chosenImg = document.querySelector('.sliderimg');
+
+    uploadButton.onchange = () => {
+        let reader = new FileReader();
+        reader.readAsDataURL(uploadButton.files[0]);
+        console.log(uploadButton.files[0]);
+        reader.onload = () => {
+            chosenImg.setAttribute("src", reader.result);
+        }
+    }
+}

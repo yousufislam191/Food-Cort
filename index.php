@@ -7,27 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Shop</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!-- Google Icons -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- Flat Icons -->
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
     <!-- Box Icons -->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- owl-carousel cdn -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
 
     <!-- Favicons -->
     <link href="assets/logo/logo.png" rel="icon">
@@ -46,8 +40,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li class="dropdown"><a href="#"><span>Catagory</span> <span
-                                class="material-symbols-outlined">expand_more</span></a>
+                    <li class="dropdown"><a href="#"><span>Catagory</span> <span class="material-symbols-outlined">expand_more</span></a>
                         <ul>
                             <li><a href="#">Juice</a></li>
                             <li><a href="#">Burger</a></li>
@@ -89,26 +82,21 @@
                     <form action="serverSite/loginSubmit.php" method="POST" id="loginForm">
                         <div class="form-group">
                             <label for="loginEmail">Email Address</label>
-                            <input type="email" class="form-control" id="login-email" name="loginEmail"
-                                placeholder="Enter email">
+                            <input type="email" class="form-control" id="login-email" name="loginEmail" placeholder="Enter email">
                             <span id="erroremail" style="color: red;"></span>
                         </div><br>
                         <div class="form-group">
                             <label for="loginPassword">Password</label>
-                            <input type="text" class="form-control" id="login-password" name="loginPassword"
-                                placeholder="Password">
+                            <input type="text" class="form-control" id="login-password" name="loginPassword" placeholder="Password">
                             <span id="errorpass" style="color: red;"></span>
                         </div><br>
                         <div class="d-grid col-6 mx-auto">
-                            <button type="submit" class="btn btn-outline-primary text-uppercase btn-block"
-                                style="font-weight: 600; transition: .3s;"
-                                onclick="return loginValidation()">Login</button>
+                            <button type="submit" class="btn btn-outline-primary text-uppercase btn-block" style="font-weight: 600; transition: .3s;" onclick="return loginValidation()">Login</button>
                         </div>
                     </form><br>
                     <div class="justify-content-center d-flex">
                         <p class="d-inline">I have not an account?</p>
-                        <p class="signin-end-text d-inline" id="reg-btn" data-bs-toggle="modal"
-                            data-bs-target="#modalRegistration" aria-label="Close">Register now
+                        <p class="signin-end-text d-inline" id="reg-btn" data-bs-toggle="modal" data-bs-target="#modalRegistration" aria-label="Close">Register now
                         </p>
                     </div>
                 </div>
@@ -129,32 +117,26 @@
                     <form action="serverSite/registrationSubmit.php" method="POST" id="registrationForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" class="form-control" id="registration-name" name="name"
-                                placeholder="Enter your name">
+                            <input type="text" class="form-control" id="registration-name" name="name" placeholder="Enter your name">
                             <span id="errorname" style="color: red;"></span>
                         </div><br>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="registration-email" name="email"
-                                placeholder="Enter email">
+                            <input type="email" class="form-control" id="registration-email" name="email" placeholder="Enter email">
                             <span id="erroremail" style="color: red;"></span>
                         </div><br>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="registration-password" name="password"
-                                placeholder="Password">
+                            <input type="text" class="form-control" id="registration-password" name="password" placeholder="Password">
                             <span id="errorpass" style="color: red;"></span>
                         </div><br>
                         <div class="d-grid col-6 mx-auto">
-                            <button type="submit" class="btn btn-outline-success text-uppercase btn-block"
-                                style="font-weight: 600; transition: .3s;"
-                                onclick="return registrationValidation()">Register</button>
+                            <button type="submit" class="btn btn-outline-success text-uppercase btn-block" style="font-weight: 600; transition: .3s;" onclick="return registrationValidation()">Register</button>
                         </div>
                     </form><br>
                     <div class="justify-content-center d-flex">
                         <p class="d-inline">I have an account?</p>
-                        <p class="signin-end-text d-inline" id="login-btn" data-bs-toggle="modal"
-                            data-bs-target="#modalLogin" aria-label="Close">Login now</p>
+                        <p class="signin-end-text d-inline" id="login-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" aria-label="Close">Login now</p>
                     </div>
                 </div>
             </div>
@@ -223,8 +205,7 @@
                     <div class="pi-pic">
                         <img src="assets/product/1.jpg" alt="" class="img-thumbnail">
                         <div class="pi-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -240,8 +221,7 @@
                         <div class="tag-new">New</div>
                         <img src="assets/product/2.jpg" alt="" class="img-thumbnail">
                         <div class="pi-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -256,8 +236,7 @@
                     <div class="pi-pic">
                         <img src="assets/product/3.jpg" alt="" class="img-thumbnail">
                         <div class="pi-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -272,8 +251,7 @@
                     <div class="pi-pic">
                         <img src="assets/product/4.jpg" alt="" class="img-thumbnail">
                         <div class="pi-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -288,8 +266,7 @@
                     <div class="pi-pic">
                         <img src="assets/product/6.jpg" alt="" class="img-thumbnail">
                         <div class="pi-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -328,8 +305,7 @@
                     <div class="card">
                         <img src="assets/product/5.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -347,8 +323,7 @@
                     <div class="card">
                         <img src="assets/product/6.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -366,8 +341,7 @@
                     <div class="card">
                         <img src="assets/product/7.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -385,8 +359,7 @@
                     <div class="card">
                         <img src="assets/product/8.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -404,8 +377,7 @@
                     <div class="card">
                         <img src="assets/product/9.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -423,8 +395,7 @@
                     <div class="card">
                         <img src="assets/product/10.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -442,8 +413,7 @@
                     <div class="card">
                         <img src="assets/product/11.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -461,8 +431,7 @@
                     <div class="card">
                         <img src="assets/product/12.jpg" class="card-img-top" alt="...">
                         <div class="pl-links">
-                            <a href="#" class="add-card"><span
-                                    class="material-symbols-outlined shop">shopping_cart</span>
+                            <a href="#" class="add-card"><span class="material-symbols-outlined shop">shopping_cart</span>
                                 <p>ADD TOCART</p>
                             </a>
                             <a href="#" class="wishlist-btn"><span class="material-symbols-outlined">favorite</span></a>
@@ -557,30 +526,17 @@
             <div class="copyright">
                 &copy; 2022 Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
             </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-                Designed by <a href="https://yousufislam191.github.io/resume" target="_blank">Yousuf</a>
+            <div class="credits">Designed by <a href="https://yousufislam191.github.io/resume" target="_blank">Yousuf</a>
             </div>
-
-
-
         </div>
     </footer><!-- End Footer -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><span
-            class="material-symbols-outlined">arrow_upward</span></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><span class="material-symbols-outlined">arrow_upward</span></a>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
-
-    <!-- flat Icons -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/flat-ui.min.js"></script> -->
 
     <!-- owl-carousel cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
