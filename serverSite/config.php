@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 
 $dbserver = "localhost";
 $dbuser = "root";
@@ -12,5 +12,4 @@ $connection = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
 // Check connection
 if ($connection->connect_error) {
     die("could not established connection: " . $connection->connect_error);
-} else {
 }

@@ -11,18 +11,6 @@
     --z-fixed: 100
 }
 
-/* * {
-    margin: 0;
-    padding: 0px;
-}
-
-body {
-    font-family: "Open Sans", sans-serif;
-    color: #444444;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-} */
-
 *,
 ::before,
 ::after {
@@ -220,4 +208,23 @@ h6 {
         max-height: 550px;
         max-width: 700px;
     }
+}
+
+/* Table image */
+@media (min-width: 991px) {
+    .sliderTableImg {
+        max-height: 200px;
+        max-width: 200px;
+    }
+}
+
+/* Table hover */
+.tableHover:hover {
+    background-color: #37517e52;
+
+}
+
+#popupDelete {
+    top: 20%;
+    left: 50%;
 }

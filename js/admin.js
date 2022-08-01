@@ -65,3 +65,23 @@ function getImage() {
         }
     }
 }
+
+/**
+   * Slider Image Rename Massege show
+*/
+function imageNameCheck() {
+    var renameSliderImage = document.getElementById("renameImage").innerHTML = "Rename your image. Because the image with the same name already exists in the database.";
+    return false;
+
+    // if (!email.match(emailRegex)) {
+    //     document.getElementById("erroremail").innerHTML = "Email is Invalid";
+    //     return false;
+    // }
+}
+
+/**
+   * Data Table
+*/
+$(document).ready(function () {
+    $('#example').DataTable();
+});

@@ -22,6 +22,11 @@
     <!-- Box Icons -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap5.min.css">
+
     <!-- Favicons -->
     <link href="../assets/logo/logo.png" rel="icon">
 
@@ -80,7 +85,8 @@
                 <img src="../assets/default_img/privew_slider.jpg" class="img-thumbnail sliderimg" alt="">
             </div>
             <div class="col-md-6">
-                <form action="serverSite/admin.php" method="POST" id="registrationForm" enctype="multipart/form-data">
+                <form action="../serverSite/admin.php" method="POST" id="registrationForm"
+                    enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" required class="form-control" id="title" name="title"
@@ -98,8 +104,9 @@
                     </div><br>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Upload Image</label>
-                        <input class="form-control" type="file" required id="formFile" accept=".jpg, .jpeg, .png, .gif"
-                            onclick="return getImage();">
+                        <input class="form-control" type="file" required id="formFile" name="image"
+                            accept=".jpg, .jpeg, .png, .gif" onclick="return getImage();">
+                        <span id="renameImage" style="color: red;"></span>
                     </div><br>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check">
@@ -133,8 +140,60 @@
     </section>
     <!--Container slider end-->
 
+    <!--Table start-->
+    <section>
+        <h2 class="text-center mt-5 mb-3 text-light pt-3 pb-3" style="background-color: #37517E;">List of Slider</h2>
+        <!-- nowrap-->
+        <table class="table table-hover table-striped table-bordered dt-responsive" id="example" style="width:100%">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Title</th>
+                    <th scope="col">Subtitle</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Offer Price</th>
+                    <th scope="col">Offer Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                include '../serversite/fetchIndexPageData.php';
+
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "
+                    <tr class='align-middle tableHover'>
+                        <th scope='row'>$row[s_title]</th>
+                            <td>$row[s_subtitle]</td>
+                            <td><img src='../$row[s_img_path]' class='img-thumbnail sliderTableImg' alt=' srcset='></td>
+                            <td>$row[s_offer_price]</td>
+                            <td>$row[s_offer_name]</td>
+                            <td>$row[s_description]</td>
+                            <td>
+                                <div class='d-flex gap-2'>
+                                    <a href='#'><span
+                                            class='material-symbols-outlined text-light p-2 rounded bg-success'>update</span></a>
+                                    <a href='../serversite/sliderDelete.php?id=$row[s_id]&imgPath=$row[s_img_path]' type='hidden'><span
+                                            class='material-symbols-outlined text-light p-2 rounded bg-danger'>delete</span></a>
+                                </div>
+                            </td>
+                    </tr>
+                ";
+                }
+                ?>
+            </tbody>
+        </table>
+    </section>
+    <!--Table End-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- data table js file -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 
     <!-- admin js file -->
     <script src="../js/admin.js"></script>
