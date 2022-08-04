@@ -48,6 +48,14 @@ function offerCheckking() {
         $("#offer").hide();
     }
 }
+$('#ucheck').change(UpdateofferCheckking);
+function UpdateofferCheckking() {
+    if ($('#ucheck').is(":checked")) {
+        $("#uoffer").show();
+    } else {
+        $("#uoffer").hide();
+    }
+}
 
 /**
    * displayimage slider from selected file
@@ -66,18 +74,68 @@ function getImage() {
     }
 }
 
-/**
-   * Slider Image Rename Massege show
-*/
-function imageNameCheck() {
-    var renameSliderImage = document.getElementById("renameImage").innerHTML = "Rename your image. Because the image with the same name already exists in the database.";
-    return false;
+function UpdategetImage() {
+    let uploadButton = document.getElementById('UpdateformFile');
+    let chosenImg = document.querySelector('.Updatesliderimg');
 
-    // if (!email.match(emailRegex)) {
-    //     document.getElementById("erroremail").innerHTML = "Email is Invalid";
-    //     return false;
-    // }
+    uploadButton.onchange = () => {
+        let reader = new FileReader();
+        reader.readAsDataURL(uploadButton.files[0]);
+        console.log(uploadButton.files[0]);
+        reader.onload = () => {
+            chosenImg.setAttribute("src", reader.result);
+        }
+    }
 }
+/**
+   * show updated data in input field
+*/
+$(".editbtn").click(e => {
+
+    let textvalues = displayData(e);
+    let destinationImgPath = "../";
+    console.log(textvalues);
+
+    var UpdateShowImg = document.getElementById('UpdateShowImg');
+    UpdateShowImg.src = destinationImgPath.concat(textvalues[3]);
+
+    let id = $("input[name*='UpdatesliderId']");
+    let img = $("input[name*='Updateselectimg']");
+    let title = $("input[name*='Updatetitle']");
+    let subtitle = $("input[name*='UpdatesubTitle']");
+    let description = $("textarea[name*='Updatedescription']");
+    let offer_price = $("input[name*='UpdateofferPrice']");
+    let offer_name = $("input[name*='UpdateofferName']");
+
+    id.val(textvalues[0]);
+    title.val(textvalues[1]);
+    subtitle.val(textvalues[2]);
+    img.val(textvalues[3]);
+    offer_price.val(textvalues[5]);
+    offer_name.val(textvalues[6]);
+    description.val(textvalues[7]);
+});
+
+function displayData(e) {
+    let id = 0;
+    const td = $("tbody tr td");
+    let textvalues = [];
+
+    for (const value of td) {
+        if (value.dataset.id == e.target.dataset.id) {
+            textvalues[id++] = value.textContent;
+        }
+    }
+    return textvalues;
+}
+
+/**
+   * show updated button when clicked
+*/
+$('.editbtn').click(function () {
+    $("#submitSlider").hide();
+    $("#updateSlider").show();
+});
 
 /**
    * Data Table

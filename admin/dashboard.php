@@ -80,37 +80,37 @@
 
     <!--Container slider start-->
     <section>
-        <div class="row">
+        <div class="row" id="submitSlider">
             <div class="col-md-6 gap-3">
-                <img src="../assets/default_img/privew_slider.jpg" class="img-thumbnail sliderimg" alt="">
+                <div><img src="../assets/default_img/privew_slider.jpg" class="img-thumbnail sliderimg" name="selectimg"
+                        alt="" value=""></div>
             </div>
             <div class="col-md-6">
-                <form action="../serverSite/admin.php" method="POST" id="registrationForm"
-                    enctype="multipart/form-data">
+                <form action="../serverSite/sliderInsert.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" required class="form-control" id="title" name="title"
-                            placeholder="Slider Title">
+                            placeholder="Slider Title" value="">
                     </div><br>
                     <div class="form-group">
                         <label for="subTitle">Sub-Title</label>
                         <input type="text" class="form-control" id="subTitle" name="subTitle"
-                            placeholder="Slider Sub Title">
+                            placeholder="Slider Sub Title" value="">
                     </div><br>
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea type="text" required class="form-control" id="description" rows="3" name="description"
-                            placeholder="Slider Description"></textarea>
+                            placeholder="Slider Description" value=""></textarea>
                     </div><br>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Upload Image</label>
-                        <input class="form-control" type="file" required id="formFile" name="image"
+                        <input class="form-control" id="formFile" required type="file" name="image"
                             accept=".jpg, .jpeg, .png, .gif" onclick="return getImage();">
                         <span id="renameImage" style="color: red;"></span>
                     </div><br>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check">
-                        <label class="form-check-label" for="check">
+                        <label class="form-check-label mr-3" for="check">
                             Add Offer
                         </label>
                     </div><br>
@@ -119,20 +119,84 @@
                             <div class="form-group">
                                 <label for="offerPrice">Offer Price</label>
                                 <input type="text" class="form-control" id="offerPrice" name="offerPrice"
-                                    placeholder="Offer Price">
+                                    placeholder="Offer Price" value="">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="offerName">Offer Name</label>
                                 <input type="text" class="form-control" id="offerName" name="offerName"
-                                    placeholder="Offer Name">
+                                    placeholder="Offer Name" value="">
                             </div>
                         </div>
                     </div><br>
                     <div class="d-grid col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-success text-uppercase btn-block"
+                        <button type="submit" class="btn btn-outline-primary text-uppercase btn-block" id="submitbtn"
                             style="font-weight: 600; transition: .3s;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row" id="updateSlider">
+            <div class="col-md-6 ">
+                <img src="" class="img-thumbnail Updatesliderimg" name="Updateselectimg" alt="" value=""
+                    id="UpdateShowImg">
+            </div>
+            <div class="col-md-6">
+                <form action="../serverSite/sliderUpdate.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" required class="form-control" id="title" name="Updatetitle"
+                            placeholder="Slider Title" value="">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="subTitle">Sub-Title</label>
+                        <input type="text" class="form-control" id="subTitle" name="UpdatesubTitle"
+                            placeholder="Slider Sub Title" value="">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" required class="form-control" id="description" rows="3"
+                            name="Updatedescription" placeholder="Slider Description" value=""></textarea>
+                    </div><br>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload Image</label>
+                        <input class="form-control" id="UpdateformFile" type="file" name="Updateimage"
+                            accept=".jpg, .jpeg, .png, .gif" onclick="return UpdategetImage();">
+                        <span id="renameImage" style="color: red;"></span>
+                    </div><br>
+                    <div class="form-group border border-danger rounded p-3">
+                        <div><label for="description" class="text-danger">Do not change anything in this field.</label>
+                        </div>
+                        <input type="text" name="UpdatesliderId" id="" size="1">
+                        <input type="text" name="Updateselectimg2" id="">
+                    </div><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ucheck">
+                        <label class="form-check-label" for="ucheck">
+                            Add Offer
+                        </label>
+                    </div><br>
+                    <div class="row" id="uoffer">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="offerPrice">Offer Price</label>
+                                <input type="text" class="form-control" id="offerPrice" name="UpdateofferPrice"
+                                    placeholder="Offer Price" value="">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="offerName">Offer Name</label>
+                                <input type="text" class="form-control" id="offerName" name="UpdateofferName"
+                                    placeholder="Offer Name" value="">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="d-grid col-6 mx-auto">
+                        <button type="submit" class="btn btn-success text-uppercase btn-block" name="updatebtn"
+                            style="font-weight: 600; transition: .3s;">Update</button>
                     </div>
                 </form>
             </div>
@@ -161,25 +225,31 @@
                 <?php
                 include '../serversite/fetchIndexPageData.php';
 
-                while ($row = mysqli_fetch_array($result)) {
-                    echo "
-                    <tr class='align-middle tableHover'>
-                        <th scope='row'>$row[s_title]</th>
-                            <td>$row[s_subtitle]</td>
-                            <td><img src='../$row[s_img_path]' class='img-thumbnail sliderTableImg' alt=' srcset='></td>
-                            <td>$row[s_offer_price]</td>
-                            <td>$row[s_offer_name]</td>
-                            <td>$row[s_description]</td>
-                            <td>
-                                <div class='d-flex gap-2'>
-                                    <a href='#'><span
-                                            class='material-symbols-outlined text-light p-2 rounded bg-success'>update</span></a>
-                                    <a href='../serversite/sliderDelete.php?id=$row[s_id]&imgPath=$row[s_img_path]' type='hidden'><span
-                                            class='material-symbols-outlined text-light p-2 rounded bg-danger'>delete</span></a>
-                                </div>
-                            </td>
-                    </tr>
-                ";
+                while ($row = mysqli_fetch_array($result)) {  ?>
+                <tr class='align-middle tableHover'>
+
+                    <td hidden data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_id']; ?></td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_title']; ?></td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_subtitle']; ?></td>
+                    <td hidden data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_img_path']; ?></td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><img src="../<?php echo $row['s_img_path']; ?>"
+                            class='img-thumbnail sliderTableImg' alt=' srcset='>
+                    </td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_offer_price']; ?></td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_offer_name']; ?></td>
+                    <td data-id="<?php echo $row['s_id']; ?>"><?php echo $row['s_description']; ?></td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a href="#" data-toggle='tooltip' data-placement='bottom' title='Update'><span
+                                    class=" material-symbols-outlined text-light p-2 rounded bg-success editbtn"
+                                    data-id="<?php echo $row['s_id']; ?>">update</span></a>
+                            <a href="../serversite/sliderDelete.php?id=<?php echo $row['s_id']; ?>&imgPath=<?php echo $row['s_img_path']; ?>"
+                                data-toggle='tooltip' data-placement='bottom' title='Delete'><span
+                                    class="material-symbols-outlined text-light p-2 rounded bg-danger">delete</span></a>
+                        </div>
+                    </td>
+                </tr>
+                <?php
                 }
                 ?>
             </tbody>

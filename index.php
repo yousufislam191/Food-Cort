@@ -63,7 +63,7 @@
                     <?php
                     session_start();
                     if (isset($_SESSION['user_email'])) {
-                        echo "<li><a href='admin/dashboard.php'><img class='rounded-circle border' src='assets/slider/1.jpg'
+                        echo "<li><a href='admin/dashboard.php'><img class='rounded-circle border' src='assets/profile/profile.png'
                         alt='' height='50px' width='50px' srcset=''></a></li>";
                     } else {
                         echo "<li><a class='getstarted scrollto' id='home-login-btn' data-bs-toggle='modal'

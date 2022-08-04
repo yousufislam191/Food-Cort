@@ -1,5 +1,4 @@
 <?php
-
 include 'config.php';
 
 // session_start();
@@ -20,8 +19,7 @@ $imgNameCheck = "SELECT * FROM `slider` WHERE s_img_path = '$imageDestination'";
 $result = mysqli_query($connection, $imgNameCheck);
 
 if (mysqli_num_rows($result) > 0) {
-    // echo "<script src='../js/admin.js'>imageNameCheck();</script>";
-    echo "<script>alert('already exists the same name image')</script>";
+    echo "<script>alert('Already exists the same name image. Please rename your image before submit.')</script>";
     echo "<script>location.href='../admin/dashboard.php'</script>";
 } else {
     move_uploaded_file($imageLocation, $imageDestination);
