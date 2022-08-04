@@ -87,6 +87,20 @@ function UpdategetImage() {
         }
     }
 }
+
+function getAdminImage() {
+    let uploadButton = document.getElementById('adminformFile');
+    let chosenImg = document.querySelector('.adminProfileimg');
+
+    uploadButton.onchange = () => {
+        let reader = new FileReader();
+        reader.readAsDataURL(uploadButton.files[0]);
+        console.log(uploadButton.files[0]);
+        reader.onload = () => {
+            chosenImg.setAttribute("src", reader.result);
+        }
+    }
+}
 /**
    * show updated data in input field
 */
