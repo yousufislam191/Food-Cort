@@ -41,7 +41,15 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>
+            <h1 class="logo me-auto">
+                <?php
+                include 'serverSite/adminProfileGet.php';
+                while ($row = mysqli_fetch_array($result)) { ?>
+                <a href="index.html" style="text-transform: uppercase;"><?php echo $row['web_name'] ?></a>
+                <?php
+                }
+                ?>
+            </h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -493,7 +501,14 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Arsha</h3>
+                        <!-- <h3>Arsha</h3> -->
+                        <?php
+                        include 'serverSite/adminProfileGet.php';
+                        while ($row = mysqli_fetch_array($result)) { ?>
+                        <h3 style="text-transform: uppercase;"><?php echo $row['web_name'] ?></h3>
+                        <?php
+                        }
+                        ?>
                         <p>
                             A108 Adam Street <br>
                             New York, NY 535022<br>
@@ -529,11 +544,22 @@
                         <h4>Our Social Networks</h4>
                         <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            <?php
+                            include 'serverSite/adminProfileGet.php';
+                            while ($row = mysqli_fetch_array($result)) { ?>
+                            <a href="<?php echo $row['twiter'] ?>" class="twitter" target="_blank"><i
+                                    class="bx bxl-twitter"></i></a>
+                            <a href="<?php echo $row['fb'] ?>" class="facebook" target="_blank"><i
+                                    class="bx bxl-facebook"></i></a>
+                            <a href="<?php echo $row['instagram'] ?>" class="instagram" target="_blank"><i
+                                    class="bx bxl-instagram"></i></a>
+                            <a href="<?php echo $row['skype'] ?>" class="google-plus" target="_blank"><i
+                                    class="bx bxl-skype"></i></a>
+                            <a href="<?php echo $row['linkedin'] ?>" class="linkedin" target="_blank"><i
+                                    class="bx bxl-linkedin"></i></a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 

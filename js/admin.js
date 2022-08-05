@@ -157,3 +157,10 @@ $('.editbtn').click(function () {
 $(document).ready(function () {
     $('#example').DataTable();
 });
+
+/**
+   * Show admin image from databse in profile page
+*/
+function showAdminProfile(adminImgPath) {
+    console.log(adminImgPath);
+}
