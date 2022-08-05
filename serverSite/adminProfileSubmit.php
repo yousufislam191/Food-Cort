@@ -47,7 +47,6 @@ if (isset($_POST['fburl'])) {
         $url = $_POST['fburl'];
         $query = "UPDATE `admin_info` SET `fb`='$url' WHERE a_id = '1'";
         if (mysqli_query($connection, $query)) {
-            // echo "Updated facebook url.";
         }
     }
 }
