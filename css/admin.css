@@ -291,3 +291,14 @@ button {
     height: 10%;
     font-weight: 900;
 }
+
+
+/*--------------------------------------------------------------
+  # category Image responsive
+  --------------------------------------------------------------*/
+@media (min-width: 991px) {
+    .categoryimg {
+        max-height: 300px;
+        max-width: 400px;
+    }
+}

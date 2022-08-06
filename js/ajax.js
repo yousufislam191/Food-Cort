@@ -24,6 +24,32 @@ $("#adminImgSubmit").click(function (e) {
     }
 });
 
+// for web logo submit
+$("#webLogoSubmit").click(function (e) {
+    e.preventDefault();
+
+    let form_data = new FormData();
+    let img = $("#webLogo")[0].files;
+
+    if (img.length > 0) {
+        form_data.append('web_logo', img[0]);
+        $.ajax({
+            method: "POST",
+            url: "../serverSite/adminProfileSubmit.php",
+            data: form_data,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
+                // $("#showMessage").html(data);
+            }
+        });
+    }
+    else {
+        alert('Not selected any image');
+    }
+});
+
 // for Website Name submit
 $(".websiteName").click(function () {
     let websiteName = $("#websiteName").val();
@@ -101,6 +127,23 @@ $(".skype").click(function () {
         data: { skyurl: skyurl },
         success: function (data) {
             $(".skype").css("color", "green");
+        }
+    });
+});
+
+
+// for product category name submit
+$("#addCategoryInputField").click(function () {
+    let addTableName = $("#categoryInputField").val();
+    // alert(skyurl);
+
+    $.ajax({
+        method: "POST",
+        url: "../serverSite/adminProfileSubmit.php",
+        data: { addTableName: addTableName },
+        success: function (data) {
+            // alert(data);
+            $("#showDatabaseMessage").html(data);
         }
     });
 });

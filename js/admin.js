@@ -88,6 +88,26 @@ function UpdategetImage() {
     }
 }
 
+/**
+   * get product picture
+*/
+function getCategoryImage() {
+    let uploadButton = document.getElementById('categoryformFile');
+    let chosenImg = document.querySelector('.categoryimg');
+
+    uploadButton.onchange = () => {
+        let reader = new FileReader();
+        reader.readAsDataURL(uploadButton.files[0]);
+        console.log(uploadButton.files[0]);
+        reader.onload = () => {
+            chosenImg.setAttribute("src", reader.result);
+        }
+    }
+}
+
+/**
+   * get admin profile pic
+*/
 function getAdminImage() {
     let uploadButton = document.getElementById('adminformFile');
     let chosenImg = document.querySelector('.adminProfileimg');
@@ -98,6 +118,22 @@ function getAdminImage() {
         console.log(uploadButton.files[0]);
         reader.onload = () => {
             chosenImg.setAttribute("src", reader.result);
+        }
+    }
+}
+/**
+   * get website logo
+*/
+function getWebLogo() {
+    let uploadlogoButton = document.getElementById('webLogo');
+    let chosenlogo = document.querySelector('.webLogoimpot');
+
+    uploadlogoButton.onchange = () => {
+        let logoreader = new FileReader();
+        logoreader.readAsDataURL(uploadButton.files[0]);
+        console.log(uploadlogoButton.files[0]);
+        logoreader.onload = () => {
+            chosenlogo.setAttribute("src", logoreader.result);
         }
     }
 }
@@ -164,3 +200,31 @@ $(document).ready(function () {
 function showAdminProfile(adminImgPath) {
     console.log(adminImgPath);
 }
+
+
+
+/**
+   * add dynamicly input field
+*/
+// $(document).ready(function () {
+//     var i = 1;
+//     $('#addCategoryInputField').click(function () {
+//         if (i <= 7) {
+//             // $('#dynamic_field').append('<div id="row' + i + '"><label" for="member_' + i + '">Member ' + i + '</label><input type="text" name="member_' + i + '" value=""><button type="button" class="btn_remove" name="remove" id="' + i + '">X</button></div>')
+//             $('#dynamic_field').append('<div class="d-flex align-middle gap-3 mb-3 inputfield ' + i + '"><input type="text" class="form-control" id="categirybnt ' + i + '" name="categirybnt ' + i + '" placeholder="add category name" value=""><span class="material-symbols-outlined donebtn categoryadd" id="' + i + '" style="cursor: pointer;">done</span><span class="material-symbols-outlined donebtn categoryremove" id="' + i + '" style="cursor: pointer;">disabled_by_default</span></div>')
+
+
+
+
+
+//             i++;
+//         }
+//     });
+//     $(document).on('click', '.categoryremove', function () {
+//         // $(document).on('click', '.btn_remove', function () {
+//         var button_id = $(this).attr("id");
+//         i--;
+//         $('#.inputfield' + button_id + '').remove();
+//         // $('#row' + button_id + '').remove();
+//     });
+// });

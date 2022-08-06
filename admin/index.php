@@ -21,7 +21,7 @@ if (isset($_SESSION['admin_email'])) {
         rel="stylesheet">
 
     <!-- Favicons -->
-    <link href="../assets/logo/logo.png" rel="icon">
+    <link href="../assets/logo/default_logo.png" rel="icon">
 
     <link rel="stylesheet" href="../css/admin.css">
 </head>

@@ -30,7 +30,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
 
     <!-- Favicons -->
-    <link href="assets/logo/logo.png" rel="icon">
+    <link href="assets/logo/default_logo.png" rel="icon">
 
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="css/style.css">
@@ -57,10 +57,14 @@
                     <li class="dropdown"><a href="#"><span>Catagory</span> <span
                                 class="material-symbols-outlined">expand_more</span></a>
                         <ul>
-                            <li><a href="#">Juice</a></li>
-                            <li><a href="#">Burger</a></li>
-                            <li><a href="#">Coffee</a></li>
-                            <li><a href="#">Soup</a></li>
+                            <?php
+                            include 'serversite/productCategoryList.php';
+
+                            while ($row = mysqli_fetch_array($result)) { ?>
+                            <li><a href="#" style="text-transform: capitalize;"><?php echo $row['c_name'] ?></a></li>
+                            <?php
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
@@ -214,9 +218,13 @@
                 <h2>LATEST PRODUCTS</h2>
             </div>
             <div class="product-slider owl-carousel">
+                <?php
+                include 'serversite/fetchProductData.php';
+
+                while ($row = mysqli_fetch_array($result)) {  ?>
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="assets/product/1.jpg" alt="" class="img-thumbnail">
+                        <img src="<?php echo $row['mobile_img']; ?>" alt="" class="img-thumbnail">
                         <div class="pi-links">
                             <a href="#" class="add-card"><span
                                     class="material-symbols-outlined shop">shopping_cart</span>
@@ -226,11 +234,14 @@
                         </div>
                     </div>
                     <div class="pi-text">
-                        <h6>$35,00</h6>
-                        <p>Flamboyant Pink Top </p>
+                        <h6><?php echo $row['mobile_price']; ?></h6>
+                        <p><?php echo $row['mobile_title']; ?></p>
                     </div>
                 </div>
-                <div class="product-item">
+                <?php
+                }
+                ?>
+                <!-- <div class="product-item">
                     <div class="pi-pic">
                         <div class="tag-new">New</div>
                         <img src="assets/product/2.jpg" alt="" class="img-thumbnail">
@@ -294,7 +305,7 @@
                         <h6>$35,00</h6>
                         <p>Flamboyant Pink Top </p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
