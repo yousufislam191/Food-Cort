@@ -38,7 +38,7 @@ if (isset($_SESSION['admin_email'])) {
             </div><br>
             <div class="form-group">
                 <label for="adminPassword">Password</label>
-                <input type="text" class="form-control" id="adminlogin-password" name="adminPassword"
+                <input type="password" class="form-control" id="adminlogin-password" name="adminPassword"
                     placeholder="Password">
                 <span id="errorpass" style="color: red;"></span>
             </div><br>

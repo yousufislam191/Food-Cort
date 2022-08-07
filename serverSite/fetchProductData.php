@@ -2,5 +2,5 @@
 
 include 'config.php';
 
-$query = "SELECT * FROM `mobile`";
+$query = "SELECT * FROM `food`";
 $result = mysqli_query($connection, $query);
